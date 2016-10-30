@@ -1,0 +1,12 @@
+.content{
+	@include center(1200px);
+}
+body{
+	padding-top: 100px;
+}
+@import "home";
+@import "pagina";
+@import "mobile";
+@import "searchresult";
+@import "print";
+

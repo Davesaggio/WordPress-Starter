@@ -1,0 +1,15 @@
+/*!
+Theme Name: wp_base
+Theme URI: http://components.underscores.me/
+Author: Davide Saggioro
+Author URI: http://www.saggiorodavide.com/
+Description: Dave theme base
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: wp_base
+ */
+@import "base/typography";
+@import "modules/modules";
+@import "views/views";
+

@@ -1,0 +1,270 @@
+
+/* Navbar
+   ========================================================================== */
+#masthead{
+	top: 0;
+	width: 100%;
+	z-index: 9999;
+	position:fixed;
+	background: $grigioScuro;
+	#interno,
+	&.scrollato {
+		background:#fff;
+		border-bottom:1px solid $colorosso;
+	}
+	#interno .site-branding { position:static; }
+	&.scrollato	.site-branding{ 
+		top:60px;
+		svg { width:170px; }
+	}
+}
+
+.site-branding {
+	transition: all 0.3s ease-out;
+	position: absolute;
+	top: 130px;
+	svg { 
+		width:205px; 
+		transition: all 0.3s ease-out; 
+	}
+}
+
+
+
+
+
+#site-navigation {
+	transition: all 0.4s ease-out;
+	background-color: $grigioScuro;
+	ul{ 
+		float: right; 
+		ul { float:none; }
+	}
+
+}
+
+.sub-menu {
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+}
+
+.nav_left{
+	float: left;
+}
+
+
+#lang_sel_click { 
+
+	a:before { display:none }
+	ul li ul {
+		position:absolute;
+	    opacity: 0;
+		
+		
+		margin: 8px 0 0 0;
+		padding-top:20px;
+		top:37px;
+    	visibility: hidden;
+		transition: opacity .3s, transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+		z-index:99;
+		
+		a { background:#000; }
+	}
+	li:hover  ul {
+			opacity: 1;
+			visibility: visible;
+			transform:translateY(-30px);
+		}
+}
+#lang_sel a.lang_sel_sel, #lang_sel a.lang_sel_sel:visited {
+    background-color: transparent!important;
+    border: 0;
+}
+#lang_sel a, #lang_sel a.lang_sel_sel {
+    color: #fff!important;
+}
+#lang_sel a:hover, #lang_sel a.lang_sel_sel:hover{
+	color: $grigio!important;
+}
+#lang_sel li{
+	float: none;
+	width: auto;
+}
+
+
+
+
+/* MODULO MENU DREOX */
+
+
+/* menu principale */
+
+nav { 
+	zoom:1; 
+	font-weight:normal;
+	margin:0;
+	
+	&:before, 
+	&:after { content:""; display:table; }
+	&:after { clear:both; }
+	
+	a { 
+		color:#fff; 
+		display: inline-block;
+		position: relative;
+		padding: 12px 10px;
+		font-size: 14px;
+		border-left: 1px solid #7A7575;
+		transition: background .5s, color .3s, padding 0.5s, ease;
+		
+		&:after {
+			margin-left:8px;
+			color:$colorosso;
+			content: "\f107";
+		}
+		
+		&:only-child:after { display:none; }
+		&:hover { color:$colorosso; }
+	}
+		
+
+	
+	li { 
+		float:left; 
+		position:relative;
+		margin:0;
+		
+		&:hover  ul {
+			opacity: 1;
+			visibility: visible;
+			
+			transform:translateY(-30px);
+		}
+		&.current_page_parent > a { color:#E2001A!important}
+		
+		&.current-menu-item,
+		&.current_page_item { 
+			a {
+				color:#E2001A; 
+			} 
+			ul a { 
+				color:#E2001A;
+			}
+		}
+		&:last-child { 
+			margin:0;
+			 a {
+				border-right:1px solid #7A7575;
+			}
+		}
+		&.current-page-ancestor > a { color:#fff; }
+
+	}
+	.sub-menu {
+		margin: 20px 0 0 0;
+		padding-top:20px;
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		top: 35px;
+		left: 0;
+		z-index: 10;
+		
+		color:#999;
+		
+		transition: opacity .3s, transform .2s ease-in-out;
+		
+		li {
+			float: none;
+			display: block;
+			margin:0;
+			_line-height: 0; /*IE6 only*/
+			
+			&:first-child { border-top:10px solid #302b2b!important; }
+			 
+			&:last-child { 
+				border-bottom:10px solid #302b2b;
+				a {
+					border-right:none;
+				}
+			}
+			&:first-child { border-top:none; }
+		}
+		
+		a {
+			color:	#999;
+			background:#302b2b; 
+			font-size:16px; 
+			padding: 8px 30px 8px 22px;
+			margin-left:0;
+			border:0;
+			border-width:0;
+			/*width: 80px;*/
+			_height: 10px; /*IE6 only*/
+			display: block;
+			white-space: nowrap;
+			float: none;
+			text-transform: none;
+			
+			&:before { 
+				margin-right:15px;
+				color:$colorosso;
+				content: "\f105";
+				display: inline-block;
+				font: normal normal normal 14px/1 FontAwesome;
+				font-size: inherit;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				transition: color .2s ease-in-out;
+			}
+			
+			&:after { 
+				display:none 
+			}
+			
+			&:hover {
+				color:#fff!important;
+				background:$colorosso;
+				border:0;
+				&:before { color:#fff }
+				&:after { display:none }
+			}
+		}
+	}
+}
+
+
+#masthead .sub-menu .sub-menu{
+    position: relative;
+    top: 0;
+    margin-top: 0;
+    padding-top: 0;
+    opacity: 1;
+    transform: translateY(0);
+    li:first-child{
+    	border-top: 0!important;
+    }
+    li:last-child{
+    	border-bottom:0;
+    }
+
+
+}
+
+#masthead .sub-menu {
+	li.separatore{
+	    border-bottom: 0;
+	}
+	li.separatore.menu-item > a{
+		color: #fff;
+		text-transform: uppercase;
+		&:before {
+		    display: none;
+		}
+	}
+}
+
+
+	
