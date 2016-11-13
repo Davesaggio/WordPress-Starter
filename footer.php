@@ -16,7 +16,7 @@
 	</footer>
 </div>
 <script type="text/javascript">
-   var templateDir = "<?php bloginfo('template_directory') ?>";
+   var templateDir = "<?php  echo esc_url( get_template_directory_uri() ) ?>";
    </script>
 <?php wp_footer(); ?>
 

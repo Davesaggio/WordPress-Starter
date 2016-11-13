@@ -34,7 +34,10 @@
 <div id="page" class="site">
 
 	<header id="masthead" class="site-header" role="banner">
+
 		<nav id="main_nav">
+			<div class="overlay_menu"></div>
+
 			<div class="content">
 				<div class="site-branding" itemscope itemtype="http://schema.org/Organization">
 				
@@ -49,7 +52,15 @@
 					<?php if ( is_front_page()) { ?></h1><?php } ?>
 
 				</div><!-- .site-branding -->
-				<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_id' => 'main-menu' ) ); ?>
+				<div class="toggle" id="navToggle">
+			        <div>
+			            <div></div>
+			            <div></div>
+			            <div></div>
+			        </div>
+			    </div>
+				<?php wp_nav_menu( array( 'container'=> false, 'theme_location' => 'main-menu', 'menu_id' => 'main-menu' ) ); ?>
+			    
 			</div>
 		</nav>
 		

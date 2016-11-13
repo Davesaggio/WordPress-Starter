@@ -19,6 +19,11 @@ Dave theme base
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
+== Frequently Asked Questions ==
+
+= Does this theme support any plugins? =
+
+wp_base includes support for Jetpack's Infinite Scroll as well as other features.
 
 == Changelog ==
 

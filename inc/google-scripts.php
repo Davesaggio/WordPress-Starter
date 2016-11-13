@@ -1,6 +1,6 @@
 <script type="text/javascript">
   WebFontConfig = {
-    google: { families: [ 'Roboto:300,400,500,700:latin' ] }
+    google: { families: [ 'Montserrat:400,700:latin' ] }
   };
   (function() {
     var wf = document.createElement('script');

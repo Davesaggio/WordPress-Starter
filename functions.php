@@ -245,6 +245,174 @@ function my_register_sidebars() {
   }
 
 
+  /** Elementi Custom **/   
+
+add_action( 'init', 'crea_post' );
+
+function crea_post() {
+	$name_post = "prodotto";
+
+
+  	$labels = array(
+
+  	'name'        => $name_post,
+
+	 //'name'        => 'Prodotti',
+
+	'singular_name'   => $name_post,
+
+	'add_new'     => 'Aggiungi '.$name_post.'',
+
+	'add_new_item'    => 'Aggiungi nuovo '.$name_post.'',
+
+	'edit_item'     => 'Modifica '.$name_post.'',
+
+	'new_item'      => 'Nuova '.$name_post.'',
+
+	'all_items'     => __('Elenco '.$name_post.''),
+
+	'view_item'     => __('Visualizza '.$name_post.''),
+
+	'search_items'    => 'Cerca '.$name_post.'',
+
+	'not_found'     =>  ''.$name_post.' non trovato',
+
+	'not_found_in_trash' => ''.$name_post.' non presente nel cestino',
+
+	'parent_item_colon' => '',
+
+);
+
+
+
+$args = array( 
+
+  'labels' => $labels,
+
+  'description'     => 'Catalogo '.$name_post.'',
+
+  'public'      => true,
+
+  'publicly_queryable' => true,
+
+  'show_ui'       => true,
+
+  'exclude_from_search' => false,
+
+  'query_var'     => true,
+
+  'rewrite'     => array('slug' => $name_post, 'hierarchical' => true, 'with_front' => false ),
+
+  //'rewrite'     => array( 'hierarchical' => true ),*/
+
+  //'rewrite'       => true,
+
+  'capability_type'   => 'post',
+
+  'has_archive'     => true,
+
+  'hierarchical'    => true,
+
+  //'hierarchical'    => false,
+
+  'menu_position'   => 20,
+
+  'supports'      => array( 'title','editor','thumbnail','excerpt', 'page-attributes' ),
+
+  //'register_meta_box_cb' => 'admin_init', // Callback function for custom metaboxes
+
+  );
+
+  register_post_type( $name_post, $args);
+
+    //flush_rewrite_rules();
+
+  }
+
+
+
+  // /** Elementi Custom **/   
+
+  // add_action( 'init', 'crea_filiali' );
+
+  // function crea_filiali() {
+
+
+
+
+
+  //   	$labels = array(
+  //       	'name'        => 'Filiali',
+  //   		//'name'				=> 'Prodotti',
+  //       	'singular_name'   => 'Filiale',
+           
+  //          'add_new'     => 'Aggiungi Filiale',
+
+  //          'add_new_item'    => 'Aggiungi nuova Filiale',
+
+  //          'edit_item'     => 'Modifica Filiale',
+
+  //          'new_item'      => 'Nuova Filiale',
+
+  //          'all_items'     => __('Elenco Fliali'),
+
+  //          'view_item'     => __('Visualizza Filiale'),
+
+  //          'search_items'    => 'Cerca Filiale',
+
+  //          'not_found'     =>  'Filiale non trovato',
+
+  //          'not_found_in_trash' => 'Filiale non presente nel cestino',
+
+  //          'parent_item_colon' => '',
+  //       );
+    	
+  //   	$args = array( 
+  //       	'labels' => $labels,
+  // 		'description' 		=> 'Lista filiali',
+  //   		'public' 			=> true,
+  //       	'publicly_queryable' => true,
+  //       	'show_ui' 			=> true,
+  //       	'exclude_from_search' => false,
+  //       	'query_var' 		=> true,
+  //   		//'rewrite'			=> array('slug' => 'catalogo'),
+  //   		'rewrite'			=> array('slug' => 'filiale'),
+  //   		//'rewrite'			=> array( 'hierarchical' => true ),*/
+  //           //'rewrite' 			=> true,
+  //   		//'menu_icon' 		=> get_bloginfo('template_url').'/img/project.png', 
+  //           'capability_type' 	=> 'post',
+  //           'has_archive' 		=> true,
+  //           'hierarchical' 		=> true,
+  //   		//'hierarchical' 		=> false,
+  //           'menu_position' 	=> 20,
+  //           'supports' 			=> array( 'title','editor','thumbnail','excerpt' ),
+  //           //'register_meta_box_cb' => 'admin_init', // Callback function for custom metaboxes
+  //   	);
+
+
+  //   	register_taxonomy('categoria-filiale', 'filiale', array(    
+  //   	    'hierarchical' => true, 
+  //   	    'label' => 'Categoria Filiali',
+  //   	    'singular_name' => 'Categoria', 
+  //   	    'name'              => _x( 'Categoria Filiali', 'taxonomy general name' ),
+  //   	    'search_items'      => __( 'Cerca Categorie degli Filiali' ),
+  //   	    'all_items'         => __( 'Tutte le categorie degli Filiali' ),
+  //   	    'parent_item'       => __( 'Categoria genitore' ),
+  //   	    'parent_item_colon' => __( 'Parent Product Category:' ),
+  //   	    'edit_item'         => __( 'Edit Product Category' ), 
+  //   	    'update_item'       => __( 'Update Product Category' ),
+  //   	    'add_new_item'      => __( 'Add New Product Category' ),
+  //   	    'new_item_name'     => __( 'New Product Category' ),
+  //   	    'menu_name'         => __( 'Product Categories' ),
+  //   	    'rewrite'     => array('slug' => 'lista', 'hierarchical' => true, 'with_front' => false ),
+  //   	    "query_var" => true,
+  //   	    'show_ui'           => true,
+  //   	    'show_admin_column' => true,
+  //   	    ));
+  //   	  register_post_type( 'filiale', $args);
+  //   	//flush_rewrite_rules();
+  //   }
+
   // aumento file upload
   @ini_set( 'upload_max_size' , '64M' );
   @ini_set( 'post_max_size', '64M');

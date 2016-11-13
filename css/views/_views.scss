@@ -2,7 +2,15 @@
 	@include center(1200px);
 }
 body{
-	padding-top: 100px;
+	color:  #fff;
+}
+.backgrond-image {
+    height: 100%;
+    background-size: cover;
+}
+.banner {
+    height: 100vh;
+    position: relative;
 }
 @import "home";
 @import "pagina";
